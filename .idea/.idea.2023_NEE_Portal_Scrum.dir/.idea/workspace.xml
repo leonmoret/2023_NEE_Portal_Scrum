@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7a4463a-3e4f-4c05-a0ae-3b59316aa522" name="Changes" comment="" />
+    <list default="true" id="e7a4463a-3e4f-4c05-a0ae-3b59316aa522" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/NEE_Portal/.idea/.idea.NEE_Portal/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NEE_Portal/.idea/.idea.NEE_Portal/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NEE_Portal/.idea/.idea.NEE_Portal/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NEE_Portal/.idea/.idea.NEE_Portal/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NEE_Portal/DAL/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NEE_Portal/DAL/DAL.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NEE_Portal/NEE_Portal.sln" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +47,7 @@
       <workItem from="1697036609623" duration="90000" />
       <workItem from="1697109512130" duration="902000" />
       <workItem from="1697110480894" duration="1915000" />
+      <workItem from="1697116466310" duration="38000" />
     </task>
     <task id="LOCAL-00001" summary="add architecture">
       <created>1697109608963</created>
