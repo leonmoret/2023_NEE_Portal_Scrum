@@ -6,7 +6,23 @@
     <projectFile profileName="https">MVCClient.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b80c0b85-b1ac-462d-bae1-0ec1f77803a4" name="Changes" comment="" />
+    <list default="true" id="b80c0b85-b1ac-462d-bae1-0ec1f77803a4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../API/.idea/.idea.API/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/.idea/.idea.API/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/.idea/.idea.API/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/.idea/.idea.API/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/API.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/API/API.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/API/Controllers/WeatherForecastController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/API/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/API/Properties/launchSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/API/WeatherForecast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/API/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/API/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/DAL/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/DAL/DAL.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MVCClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MVCClient/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,14 +34,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.MVCClient: IIS Express">
     <configuration name="MVCClient: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MVCClient.csproj" />
@@ -82,6 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1697117359994</updated>
       <workItem from="1697117361170" duration="144000" />
+      <workItem from="1697117538743" duration="100000" />
     </task>
     <task id="LOCAL-00001" summary="Add DAL, API and MVC Client">
       <created>1697117412211</created>
@@ -90,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697117412211</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add DAL, API and MVC Client">
+      <created>1697117563145</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697117563145</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
