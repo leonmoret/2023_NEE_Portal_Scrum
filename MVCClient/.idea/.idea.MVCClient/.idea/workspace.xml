@@ -5,23 +5,38 @@
     <projectFile profileName="http">MVCClient.csproj</projectFile>
     <projectFile profileName="https">MVCClient.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b80c0b85-b1ac-462d-bae1-0ec1f77803a4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../API/.idea/.idea.API/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/.idea.API/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/.idea.API/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/.idea.API/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/API.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/API/API.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/API/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/API/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/API/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/API/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/API/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/API/appsettings.json" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../API/API/Controllers/PlantsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../API/API/Extension/ConverterExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../API/API/Models/ElectricityProductionPlant.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../API/API/Models/MainCategoryCatalogue.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../API/DAL/DatabaseNeePortal2023Uas6Context.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../API/DAL/Models/ElectricityProductionPlant.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../API/DAL/Models/MainCategoryCatalogue.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../API/DAL/Models/OrientationCatalogue.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../API/DAL/Models/PlantCategoryCatalogue.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../API/DAL/Models/PlantDetail.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../API/DAL/Models/SubCategoryCatalogue.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/BarChartViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/ElectricityProductionPlant.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/IPlantServices.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/PlantServices.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Home/Plants.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/.idea/.idea.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/.idea.API/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/API/API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../API/API/API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../API/API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../API/API/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../API/DAL/Class1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/DAL/DAL.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/DAL/DAL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../API/DAL/DAL.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MVCClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MVCClient/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,15 +49,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\kelvi\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\kelvi\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\kelvi\\AppData\\Local\\Symbols\\src"
+    ]
   }
-}</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.MVCClient: IIS Express">
+}]]></component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.MVCClient: https">
     <configuration name="MVCClient: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MVCClient.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
@@ -99,6 +125,7 @@
       <updated>1697117359994</updated>
       <workItem from="1697117361170" duration="144000" />
       <workItem from="1697117538743" duration="100000" />
+      <workItem from="1699498315486" duration="10081000" />
     </task>
     <task id="LOCAL-00001" summary="Add DAL, API and MVC Client">
       <created>1697117412211</created>

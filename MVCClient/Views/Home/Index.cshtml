@@ -1,4 +1,5 @@
-﻿@{
+﻿@model MVCClient.Models.BarChartViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +7,50 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<div>
+    <canvas id="plantChart" width="400" height="200"></canvas>
+</div>
+
+<div>
+    <p>Total PV this year Kwh: @Model.PVkWhThisYear</p>
+    <canvas id="plantChart" width="400" height="200"></canvas>
+</div>
+
+<div>
+    <p>Total PV last year Kwh: @Model.PVkWhLastYear</p>
+    <canvas id="plantChart" width="400" height="200"></canvas>
+</div>
+
+<div>
+    <p>Total WT this year Kwh: @Model.WTkWhThisYear</p>
+    <canvas id="plantChart" width="400" height="200"></canvas>
+</div>
+
+<div>
+    <p>Total WT last year Kwh: @Model.WTkWhLastYear</p>
+    <canvas id="plantChart" width="400" height="200"></canvas>
+</div>
+
+     
+     @section scripts {
+         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+         <script>
+             var ctx = document.getElementById('plantChart').getContext('2d');
+             var chartData = {
+                 datasets: [{
+                     label: 'Plant Operation Count',
+                     data: @Model.PVkWhThisYear,
+                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                     borderColor: 'rgba(75, 192, 192, 1)',
+                     borderWidth: 1
+                 }]
+             };
+     
+             var myBarChart = new Chart(ctx, {
+                 type: 'bar',
+                 data: chartData
+             });
+         </script>
+     }
+}
