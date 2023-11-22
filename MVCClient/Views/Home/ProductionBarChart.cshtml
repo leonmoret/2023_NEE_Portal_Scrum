@@ -1,0 +1,52 @@
+ @model List<ProductionVS>
+ 
+@{
+  var gwh_PV_2017Json = System.Text.Json.JsonSerializer.Serialize(Model.Where(p => p.Year == 2017).Where(p => p.SubCategory == "PV").Select(p=>p.Gwh));
+  var gwh_PV_2018Json = System.Text.Json.JsonSerializer.Serialize(Model.Where(p => p.Year == 2018).Where(p => p.SubCategory == "PV").Select(p=>p.Gwh));
+  var gwh_Hydr_2017Json = System.Text.Json.JsonSerializer.Serialize(Model.Where(p => p.Year == 2017).Where(p => p.SubCategory == "mini-hydraulic").Select(p=>p.Gwh));
+  var gwh_Hydr_2018Json = System.Text.Json.JsonSerializer.Serialize(Model.Where(p => p.Year == 2018).Where(p => p.SubCategory == "mini-hydraulic").Select(p=>p.Gwh));
+
+}
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
+ <canvas id="barChart"></canvas>
+ 
+ <script>
+ 
+   var  gwh_PV_2017 = JSON.parse('@Html.Raw(gwh_PV_2017Json)');
+   var  gwh_PV_2018 = JSON.parse('@Html.Raw(gwh_PV_2018Json)');
+   var  gwh_Hydr_2017 = JSON.parse('@Html.Raw(gwh_Hydr_2017Json)');
+   var  gwh_Hydr_2018 = JSON.parse('@Html.Raw(gwh_Hydr_2018Json)');
+      
+      
+   var ctx = document.getElementById('barChart').getContext('2d');
+   var myChart = new Chart(ctx, {
+     type: 'bar',
+     data: {
+       labels: ['PV', 'Mini-Hydraulic'],
+       datasets: [{
+         label: '2017',
+         data: [gwh_PV_2017, gwh_Hydr_2017],
+         backgroundColor: 'rgba(75, 192, 192, 0.2)',
+         borderColor: 'rgba(75, 192, 192, 1)',
+         borderWidth: 1
+       },
+       {
+         label: '2018',
+         data: [gwh_PV_2018, gwh_Hydr_2018],
+         backgroundColor: 'rgba(255, 99, 132, 0.2)',
+         borderColor: 'rgba(255, 99, 132, 1)',
+         borderWidth: 1
+       }]
+     },
+     options: {
+       scales: {
+         y: {
+           beginAtZero: true
+         }
+       }
+     }
+   });
+ </script>
+
+ 

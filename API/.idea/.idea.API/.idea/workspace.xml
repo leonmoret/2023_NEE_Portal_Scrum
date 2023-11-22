@@ -4,32 +4,24 @@
     <projectFile profileName="IIS Express">API.csproj</projectFile>
     <projectFile profileName="http">API.csproj</projectFile>
     <projectFile profileName="https">API.csproj</projectFile>
-    <projectFile>API/API.csproj</projectFile>
+    <projectFile profileName="IIS Express">API/API.csproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bb6b430-10dd-4759-8239-dbce7c45c63f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/API/Controllers/PlantsController.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/API/Extension/ConverterExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/Models/ElectricityProductionPlant.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/Models/MainCategoryCatalogue.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DAL/DatabaseNeePortal2023Uas6Context.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DAL/Models/ElectricityProductionPlant.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DAL/Models/MainCategoryCatalogue.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DAL/Models/OrientationCatalogue.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DAL/Models/PlantCategoryCatalogue.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DAL/Models/PlantDetail.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DAL/Models/SubCategoryCatalogue.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MVCClient/Models/BarChartViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MVCClient/Models/ElectricityProductionPlant.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MVCClient/Services/IPlantServices.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MVCClient/Services/PlantServices.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MVCClient/Views/Home/Plants.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVCClient/Models/ProductionVS.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVCClient/Models/ProductionViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVCClient/Services/IPlantService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVCClient/Services/PlantService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVCClient/Views/Home/ProductionBarChart.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.API/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/API/API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Controllers/WeatherForecastController.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/WeatherForecast.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAL/Class1.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DAL/DAL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DAL/DAL.csproj" afterDir="false" />
@@ -37,6 +29,7 @@
       <change beforePath="$PROJECT_DIR$/../MVCClient/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MVCClient/Controllers/HomeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MVCClient/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MVCClient/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MVCClient/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../MVCClient/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MVCClient/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../MVCClient/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MVCClient/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../MVCClient/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +39,7 @@
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectId" id="2WfKSmPELYEejPshFWEd38vliVE" />
   <component name="ProjectViewState">
@@ -107,7 +100,7 @@
       </method>
     </configuration>
     <configuration name="API: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/API.csproj" />
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/API/API.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
       <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -136,10 +129,26 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="API: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/API.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="https" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue=".NET Launch Settings Profile.API: http" />
-      <item itemvalue=".NET Launch Settings Profile.API" />
       <item itemvalue=".NET Launch Settings Profile.API: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.API: http" />
+      <item itemvalue=".NET Launch Settings Profile.API: https" />
+      <item itemvalue=".NET Launch Settings Profile.API" />
       <item itemvalue=".NET Project.API" />
     </list>
   </component>
@@ -156,9 +165,9 @@
       <workItem from="1697118580327" duration="219000" />
       <workItem from="1697118819952" duration="109000" />
       <workItem from="1697118958419" duration="166000" />
-      <workItem from="1699492294831" duration="891000" />
-      <workItem from="1699493243836" duration="392000" />
-      <workItem from="1699493904446" duration="12201000" />
+      <workItem from="1700680770834" duration="234000" />
+      <workItem from="1700681107621" duration="1888000" />
+      <workItem from="1700686356238" duration="3421000" />
     </task>
     <task id="LOCAL-00001" summary="Add DAL, API and MVC Client">
       <created>1697118286616</created>

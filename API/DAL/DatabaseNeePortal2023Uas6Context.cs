@@ -1,4 +1,6 @@
-﻿using DAL.Models;
+﻿using System;
+using System.Collections.Generic;
+using DAL.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DAL;
@@ -23,6 +25,8 @@ public partial class DatabaseNeePortal2023Uas6Context : DbContext
     public virtual DbSet<PlantCategoryCatalogue> PlantCategoryCatalogues { get; set; }
 
     public virtual DbSet<PlantDetail> PlantDetails { get; set; }
+
+    public virtual DbSet<ProductionV> ProductionVs { get; set; }
 
     public virtual DbSet<SubCategoryCatalogue> SubCategoryCatalogues { get; set; }
 
@@ -161,6 +165,23 @@ public partial class DatabaseNeePortal2023Uas6Context : DbContext
             entity.HasOne(d => d.PlantCategoryNavigation).WithMany(p => p.PlantDetails)
                 .HasForeignKey(d => d.PlantCategory)
                 .HasConstraintName("FK_PlantDetail_PlantCategoryCatalogue");
+        });
+
+        modelBuilder.Entity<ProductionV>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("ProductionVS");
+
+            entity.Property(e => e.Gwh).HasColumnName("gwh");
+            entity.Property(e => e.GwhTotal).HasColumnName("gwh_total");
+            entity.Property(e => e.IdProductionVs).HasColumnName("id_productionVS");
+            entity.Property(e => e.SubCategory).HasMaxLength(50);
+            entity.Property(e => e.Year).HasColumnName("year");
+
+            entity.HasOne(d => d.SubCategoryNavigation).WithMany()
+                .HasForeignKey(d => d.SubCategory)
+                .HasConstraintName("FK_ProductionVS_SubCategoryCatalogue");
         });
 
         modelBuilder.Entity<SubCategoryCatalogue>(entity =>

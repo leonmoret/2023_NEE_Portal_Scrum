@@ -16,39 +16,24 @@ public class HomeController : Controller
         _plantServices = plantServices;
     }
 
-
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult>  Index()
     {
-        var plants = await _plantServices.GetElectricityProductionPlant();
+        var plants = await _plantServices.GetProductionVS();
         
-        // get current year
-        var currentYear = DateTime.Now.Year;
+        // var gwh_PV_2017 = plants.Where(p => p.Year == 2017).Where(p => p.SubCategory == "subcat_2").Select(p=>p.Gwh);
+        // var gwh_PV_2018 = plants.Where(p => p.Year == 2018).Where(p => p.SubCategory == "subcat_2").Select(p=>p.Gwh);
+        // var gwh_Hydr_2017 = plants.Where(p => p.Year == 2017).Where(p => p.SubCategory == "subcat_1").Select(p=>p.Gwh);
+        // var gwh_Hydr_2018 = plants.Where(p => p.Year == 2018).Where(p => p.SubCategory == "subcat_1").Select(p=>p.Gwh);
         
-        // get plants where date is current date
-        var PVkWhThisYear = plants.Where(p => p.BeginningOfOperation.Year == currentYear).Where(p => p.SubCategory == "subcat_2")
-            .ToList();
-        var totalPVkWhThisYear = PVkWhThisYear.Sum(p => p.TotalPower);
         
-        var PVkWhLastYear = plants.Where(p => p.BeginningOfOperation.Year == currentYear - 1).Where(p => p.SubCategory == "subcat_2")
-            .ToList();
-        var totalPVkWhLastYear = PVkWhLastYear.Sum(p => p.TotalPower);
-        
-        var WTkWhThisYear = plants.Where(p => p.BeginningOfOperation.Year == currentYear).Where(p => p.SubCategory == "subcat_3")
-            .ToList();
-        var totalWTkWhThisYear = WTkWhThisYear.Sum(p => p.TotalPower);
-        
-        var WTkWhLastYear = plants.Where(p => p.BeginningOfOperation.Year == currentYear - 1).Where(p => p.SubCategory == "subcat_3")
-            .ToList();
-        var totalWTkWhLastYear = WTkWhLastYear.Sum(p => p.TotalPower);
-        
-        return View(new BarChartViewModel(totalPVkWhThisYear, totalWTkWhThisYear, totalPVkWhLastYear, totalWTkWhLastYear));
+        return View(plants);
     }
+    
 
     public IActionResult Privacy()
     {
         return View();
     }
-    
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

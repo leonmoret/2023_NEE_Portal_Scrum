@@ -13,12 +13,22 @@ public class PlantServices : IPlantServices
         _baseUrl = configuration["WebAPI:BaseUrl"];
     }
     
-    public async Task<List<ElectricityProductionPlant>> GetElectricityProductionPlant()
+    // public async Task<List<ProductionVS>> GetPlant()
+    // {
+    //     var response = await _httpClient.GetAsync(_baseUrl + "Plants");
+    //     if (!response.IsSuccessStatusCode) return null;
+    //     
+    //     var plants = await response.Content.ReadFromJsonAsync<List<ProductionVS>>();
+    //     
+    //     return plants;
+    // }
+
+    public async Task<List<ProductionVS>> GetProductionVS()
     {
         var response = await _httpClient.GetAsync(_baseUrl + "Plants");
         if (!response.IsSuccessStatusCode) return null;
         
-        var plants = await response.Content.ReadFromJsonAsync<List<ElectricityProductionPlant>>();
+        var plants = await response.Content.ReadFromJsonAsync<List<ProductionVS>>();
         
         return plants;
     }

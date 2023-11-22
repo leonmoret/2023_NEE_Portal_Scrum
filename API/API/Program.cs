@@ -17,7 +17,7 @@ namespace API
                 options.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
                 options.EnableSensitiveDataLogging();
             });
-            
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

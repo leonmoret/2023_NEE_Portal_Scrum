@@ -4,6 +4,6 @@ namespace MVCClient.Services;
 
 public interface IPlantServices
 {
-    public Task<List<ElectricityProductionPlant>> GetElectricityProductionPlant();
+    public Task<List<ProductionVS>> GetProductionVS();
 
 }

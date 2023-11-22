@@ -1,28 +1,27 @@
-﻿using DAL.Models;
+﻿using API.Models;
+using DAL.Models;
 
 namespace API.Extension;
 
 public static class ConverterExtensions
 {
-    public static API.Models.ElectricityProductionPlant ConvertToPlants(this DAL.Models.ElectricityProductionPlant plants)
+    public static ProductionVS ConvertToProductionVS(this ProductionV productionV)
     {
-        return new API.Models.ElectricityProductionPlant
+        if (productionV.SubCategory == "subcat_1")
         {
-            XtfId = plants.XtfId,
-            Address = plants.Address,
-            PostCode = plants.PostCode,
-            Municipality = plants.Municipality,
-            Canton = plants.Canton,
-            BeginningOfOperation = plants.BeginningOfOperation,
-            InitialPower = plants.InitialPower,
-            TotalPower = plants.TotalPower,
-            MainCategory = plants.MainCategory,
-            SubCategory = plants.SubCategory,  
-            PlantCategory = plants.PlantCategory,
-            X = plants.X,
-            Y = plants.Y,
+            productionV.SubCategory = "mini-hydraulic";
+        }
+        if (productionV.SubCategory == "subcat_2")
+        {
+            productionV.SubCategory = "PV";
+        }
+
+        return new ProductionVS
+        {
+               Gwh = productionV.Gwh ?? 0,
+               Gwh_Total = productionV.GwhTotal ?? 0,
+               Year = productionV.Year ?? 0,
+               SubCategory = productionV.SubCategory ?? ""
         };
-        
     }
-    
 }
