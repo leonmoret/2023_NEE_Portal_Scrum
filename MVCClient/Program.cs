@@ -1,4 +1,3 @@
-using Microsoft.Extensions.DependencyInjection;
 using MVCClient.Services.Plants;
 
 namespace MVCClient

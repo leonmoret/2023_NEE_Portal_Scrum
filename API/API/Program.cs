@@ -1,5 +1,6 @@
+using API.Dto;
 using DAL;
-using DAL.Models;
+using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.EntityFrameworkCore;
 
 namespace API
@@ -13,9 +14,9 @@ namespace API
             // Add services to the container.
             builder.Services.AddControllers();
 
-            builder.Services.AddDbContext<Context>(options =>
+            builder.Services.AddDbContext<DatabaseNeePortal2023Uas6Context>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = Plant; Trusted_Connection = True;");
                 options.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
                 options.EnableSensitiveDataLogging();
             });
@@ -30,8 +31,8 @@ namespace API
             using (var scope = app.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-
-                seed(services);
+                var dbContext = services.GetRequiredService<DatabaseNeePortal2023Uas6Context>();
+                dbContext.Database.EnsureCreated();
             }
 
             // Configure the HTTP request pipeline.
@@ -48,27 +49,6 @@ namespace API
             app.MapControllers();
 
             app.Run();
-        }
-
-        private static void seed(IServiceProvider serviceProvider)
-        {
-            using var ctx = new Context(serviceProvider.GetRequiredService<DbContextOptions<Context>>());
-
-            var deleted = ctx.Database.EnsureDeleted();
-            var created = ctx.Database.EnsureCreated();
-
-            if (created)
-            {
-                var plant1 = new Plant() { X = 2611936, Y = 1257011 };
-                var plant2 = new Plant() { X = 2645758, Y = 1265094 };
-                var plant3 = new Plant() { X = 2610547, Y = 1188979 };
-                var plant4 = new Plant() { X = 2610529, Y = 1167346 };
-                var plant5 = new Plant() { X = 2705863, Y = 1240553 };
-
-                ctx.Plants.AddRange(plant1, plant2, plant3, plant4, plant5);
-
-                ctx.SaveChanges();
-            }
         }
     }
 }

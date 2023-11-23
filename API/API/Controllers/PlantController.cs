@@ -1,5 +1,5 @@
+using API.Dto;
 using DAL;
-using DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,9 +9,9 @@ namespace API.Controllers;
 [Route("[controller]")]
 public class PlantController : ControllerBase
 {
-    private readonly Context _context;
+    private readonly DatabaseNeePortal2023Uas6Context _context;
 
-    public PlantController(Context context)
+    public PlantController(DatabaseNeePortal2023Uas6Context context)
     {
         _context = context;
     }
@@ -19,6 +19,10 @@ public class PlantController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<Plant>>> GetPlants()
     {
-        return await _context.Plants.ToListAsync();
+        var plants = await _context.ElectricityProductionPlants
+            .Select(PP => new Plant { Id = PP.XtfId, X = PP.X, Y = PP.Y })
+            .ToListAsync();
+
+        return plants;
     }
 }

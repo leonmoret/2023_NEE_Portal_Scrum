@@ -6,19 +6,22 @@
 
 <h1>Plant</h1>
 
-<div id="map" style="height: 1000px;"></div>
+<div id="map" style="height: 700px;"></div>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.4/proj4.js"></script>
 
 <script defer>
-    var map = L.map('map').setView([46.57591, 7.84956], 8);
+    var map = L.map('map', { zoomControl: false }).setView([46.57591, 7.84956], 8);
+
+    new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
     L.tileLayer('https://wmts20.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/{z}/{x}/{y}.jpeg', {
         attribution: '&copy; <a href="https://www.geo.admin.ch/">geo.admin.ch</a>',
         minZoom: 8,
     }).addTo(map);
+
 
     // Definitions for swiss coordinate system
     proj4.defs("EPSG:2056", "+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 " +
@@ -34,3 +37,9 @@
         L.marker([coordsWGS84[1], coordsWGS84[0]]).addTo(map);
     });
 </script>
+
+<style>
+    .leaflet-control-zoom {
+       margin-top : 300px !important;
+    }
+</style>
