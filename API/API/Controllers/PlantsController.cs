@@ -27,8 +27,7 @@ public class PlantsController : ControllerBase
             return NotFound();
         }
 
-        var plantList = await _context.ProductionVs.Where(p => p.Year == 2017 || p.Year == 2018).Where(p => p.SubCategory == "subcat_1" || p.SubCategory == "subcat_2")
-            .ToListAsync();
+        var plantList = await _context.ProductionVs.ToListAsync();
 
 
         if (plantList == null)
@@ -46,6 +45,4 @@ public class PlantsController : ControllerBase
         
         return plantMList;
     }
-
-
 }

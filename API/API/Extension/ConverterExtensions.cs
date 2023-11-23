@@ -15,7 +15,14 @@ public static class ConverterExtensions
         {
             productionV.SubCategory = "PV";
         }
-
+        if (productionV.SubCategory == "subcat_3")
+        {
+            productionV.SubCategory = "Windturbine";
+        }
+        if (productionV.SubCategory == "subcat_4")
+        {
+            productionV.SubCategory = "Bio-gas";
+        }
         return new ProductionVS
         {
                Gwh = productionV.Gwh ?? 0,
