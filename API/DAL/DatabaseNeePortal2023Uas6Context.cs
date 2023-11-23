@@ -11,9 +11,12 @@ public partial class DatabaseNeePortal2023Uas6Context : DbContext
     {
     }
 
-    public DatabaseNeePortal2023Uas6Context(DbContextOptions<DatabaseNeePortal2023Uas6Context> options)
+    private readonly Action<DatabaseNeePortal2023Uas6Context, ModelBuilder> _modelCustomizer;
+
+    public DatabaseNeePortal2023Uas6Context(DbContextOptions<DatabaseNeePortal2023Uas6Context> options, Action<DatabaseNeePortal2023Uas6Context, ModelBuilder> modelCustomizer = null)
         : base(options)
     {
+        _modelCustomizer = modelCustomizer;
     }
 
     public virtual DbSet<ElectricityProductionPlant> ElectricityProductionPlants { get; set; }
@@ -31,9 +34,13 @@ public partial class DatabaseNeePortal2023Uas6Context : DbContext
     public virtual DbSet<SubCategoryCatalogue> SubCategoryCatalogues { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=tcp:sql-server-nee-portal-2023-uas6.database.windows.net,1433;Initial Catalog=database_nee_portal_2023_uas6;Persist Security Info=False;User ID=nee_portal_2023uas6;Password=K4M:95U=>LqXpv[G].e%u/;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseSqlServer("Server=tcp:sql-server-nee-portal-2023-uas6.database.windows.net,1433;Initial Catalog=database_nee_portal_2023_uas6;Persist Security Info=False;User ID=nee_portal_2023uas6;Password=K4M:95U=>LqXpv[G].e%u/;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        }
+    }
+        //=> 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<ElectricityProductionPlant>(entity =>
@@ -169,13 +176,11 @@ public partial class DatabaseNeePortal2023Uas6Context : DbContext
 
         modelBuilder.Entity<ProductionV>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("ProductionVS");
-
+            entity.HasKey(e => e.IdProductionVs);
+            entity.ToTable("ProductionVS");
+            entity.Property(e => e.IdProductionVs).HasColumnName("id_productionVS");
             entity.Property(e => e.Gwh).HasColumnName("gwh");
             entity.Property(e => e.GwhTotal).HasColumnName("gwh_total");
-            entity.Property(e => e.IdProductionVs).HasColumnName("id_productionVS");
             entity.Property(e => e.SubCategory).HasMaxLength(50);
             entity.Property(e => e.Year).HasColumnName("year");
 
@@ -206,6 +211,11 @@ public partial class DatabaseNeePortal2023Uas6Context : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("it");
         });
+
+        if (_modelCustomizer is not null)
+        {
+            _modelCustomizer(this, modelBuilder);
+        }
 
         OnModelCreatingPartial(modelBuilder);
     }
