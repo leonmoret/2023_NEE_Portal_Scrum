@@ -11,31 +11,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bb6b430-10dd-4759-8239-dbce7c45c63f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/API/Extension/ConverterExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MVCClient/Models/ProductionVS.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MVCClient/Models/ProductionViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MVCClient/Services/IPlantService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MVCClient/Services/PlantService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MVCClient/Views/Home/ProductionBarChart.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.API/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_11_2023_14_43__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.API/.idea/shelf/Uncommitted_changes_before_Merge_at_30_11_2023_14_45__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/API/API.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/Class1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/DAL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DAL/DAL.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Controllers/PlantController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/PlantController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MVCClient/.idea/.idea.MVCClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MVCClient/.idea/.idea.MVCClient/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MVCClient/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MVCClient/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MVCClient/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MVCClient/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MVCClient/Controllers/PlantController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MVCClient/Services/IPlantService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MVCClient/Services/IPlantService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MVCClient/Services/PlantService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MVCClient/Services/PlantService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MVCClient/Services/Plants/IPlantService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MVCClient/Services/Plants/PlantService.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../MVCClient/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../MVCClient/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MVCClient/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../MVCClient/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MVCClient/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../MVCClient/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MVCClient/Views/Plant/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../MVCClient/Views/Home/Map.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="23_lastYear_thisYear_barChart_production" />
+      </map>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/API/Controllers/PlantsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/API/Models/ProductionVS.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/API/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/2023_NEE_Portal_ScrumOld/API/API/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/2023_NEE_Portal_ScrumOld/API/API/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/API/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/2023_NEE_Portal_ScrumOld/API/DAL/DatabaseNeePortal2023Uas6Context.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/2023_NEE_Portal_ScrumOld/API/DAL/DatabaseNeePortal2023Uas6Context.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DAL/DatabaseNeePortal2023Uas6Context.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DAL/Models/OrientationCatalogue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DAL/Models/SubCategoryCatalogue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../MVCClient/Controllers/HomeController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/2023_NEE_Portal_ScrumOld/MVCClient/Controllers/HomeController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/2023_NEE_Portal_ScrumOld/MVCClient/Controllers/HomeController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/2023_NEE_Portal_ScrumOld/MVCClient/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/2023_NEE_Portal_ScrumOld/MVCClient/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../MVCClient/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/2023_NEE_Portal_ScrumOld/MVCClient/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/2023_NEE_Portal_ScrumOld/MVCClient/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../MVCClient/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/2023_NEE_Portal_ScrumOld/MVCClient/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/2023_NEE_Portal_ScrumOld/MVCClient/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../MVCClient/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -204,6 +229,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Add DAL, API and MVC Client" />

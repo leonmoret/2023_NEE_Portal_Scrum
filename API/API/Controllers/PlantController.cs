@@ -19,7 +19,7 @@ public class PlantController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<Plant>>> GetPlants()
     {
-        var plants = await _context.ElectricityProductionPlants
+        var plants = await _context.ElectricityProductionPlants.Where(p => p.Canton == "VS").Take(100)
             .Select(PP => new Plant { Id = PP.XtfId, X = PP.X, Y = PP.Y })
             .ToListAsync();
 

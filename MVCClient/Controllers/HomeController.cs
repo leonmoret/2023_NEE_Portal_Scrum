@@ -29,11 +29,18 @@ public class HomeController : Controller
         return View(plants);
     }
     
-
-    public IActionResult Privacy()
+    public async Task<IActionResult> Map()
     {
-        return View();
+        var plants = await _plantServices.GetPlants();
+
+        return View(plants);
     }
+    
+
+    // public IActionResult Privacy()
+    // {
+    //     return View();
+    // }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
