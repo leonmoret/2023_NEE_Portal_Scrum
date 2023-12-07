@@ -1,0 +1,87 @@
+Index: Models/Plant.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>namespace MVCClient.Models\r\n{\r\n    public class Plant\r\n    {\r\n        public int Id { get; set; }\r\n        public int X { get; set; }\r\n        public int Y { get; set; }\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/Models/Plant.cs b/Models/Plant.cs
+--- a/Models/Plant.cs	
++++ b/Models/Plant.cs	
+@@ -5,5 +5,13 @@
+         public int Id { get; set; }
+         public int X { get; set; }
+         public int Y { get; set; }
++        
++        public Plant(int id, int x, int y)
++        {
++            Id = id;
++            X = x;
++            Y = y;
++        }
+     }
++    
+ }
+Index: Services/PlantService.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using MVCClient.Models;\r\n\r\nnamespace MVCClient.Services;\r\n\r\npublic class PlantServices : IPlantServices\r\n{\r\n    private readonly HttpClient _httpClient;\r\n    private readonly string _baseUrl;\r\n    \r\n    public PlantServices(HttpClient httpClient, IConfiguration configuration)\r\n    {\r\n        _httpClient = httpClient;\r\n        _baseUrl = configuration[\"WebAPI:BaseUrl\"];\r\n    }\r\n    \r\n    public async Task<List<Plant>> GetPlants()\r\n    {\r\n        var response = await _httpClient.GetAsync(_baseUrl + \"/Plant\");\r\n\r\n        if (response.IsSuccessStatusCode)\r\n        {\r\n            return await response.Content.ReadFromJsonAsync<List<Plant>>();\r\n        }\r\n\r\n        return new List<Plant>();\r\n    }\r\n\r\n    public async Task<List<ProductionVS>> GetProductionVS()\r\n    {\r\n        var response = await _httpClient.GetAsync(_baseUrl + \"Plants\");\r\n        if (!response.IsSuccessStatusCode) return null;\r\n        \r\n        var plants = await response.Content.ReadFromJsonAsync<List<ProductionVS>>();\r\n        \r\n        return plants;\r\n    }\r\n}
+===================================================================
+diff --git a/Services/PlantService.cs b/Services/PlantService.cs
+--- a/Services/PlantService.cs	
++++ b/Services/PlantService.cs	
+@@ -17,12 +17,10 @@
+     {
+         var response = await _httpClient.GetAsync(_baseUrl + "/Plant");
+ 
+-        if (response.IsSuccessStatusCode)
+-        {
+-            return await response.Content.ReadFromJsonAsync<List<Plant>>();
+-        }
++        if (!response.IsSuccessStatusCode) return null;
++        var plants = await response.Content.ReadFromJsonAsync<List<Plant>>();
+ 
+-        return new List<Plant>();
++        return plants;
+     }
+ 
+     public async Task<List<ProductionVS>> GetProductionVS()
+Index: ../API/API/Controllers/PlantsController.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using API.Extension;\r\nusing API.Models;\r\nusing DAL;\r\nusing DAL.Models;\r\nusing Microsoft.AspNetCore.Mvc;\r\nusing Microsoft.EntityFrameworkCore;\r\n\r\nnamespace API.Controllers;\r\n\r\n[Route(\"api/[controller]\")]\r\n[ApiController]\r\n\r\npublic class PlantsController : ControllerBase\r\n{\r\n    private readonly DatabaseNeePortal2023Uas6Context _context;\r\n\r\n    public PlantsController(DatabaseNeePortal2023Uas6Context context)\r\n    {\r\n        _context = context;\r\n    }\r\n\r\n    [HttpGet]\r\n    public async Task<ActionResult<IEnumerable<ProductionVS>>> GetProductionVS()\r\n    {\r\n        if (_context.ProductionVs == null)\r\n        {\r\n            return NotFound();\r\n        }\r\n\r\n        var plantList = await _context.ProductionVs.ToListAsync();\r\n\r\n\r\n        if (plantList == null)\r\n        {\r\n            return NotFound();\r\n        }\r\n        \r\n\r\n        var plantMList = new List<ProductionVS>();\r\n        \r\n         foreach (var plant in plantList)\r\n         {\r\n             plantMList.Add(plant.ConvertToProductionVS());\r\n         }\r\n        \r\n        return plantMList;\r\n    }\r\n}
+===================================================================
+diff --git a/../API/API/Controllers/PlantsController.cs b/../API/API/Controllers/PlantsController.cs
+--- a/../API/API/Controllers/PlantsController.cs	
++++ b/../API/API/Controllers/PlantsController.cs	
+@@ -1,7 +1,7 @@
++
+ using API.Extension;
+ using API.Models;
+ using DAL;
+-using DAL.Models;
+ using Microsoft.AspNetCore.Mvc;
+ using Microsoft.EntityFrameworkCore;
+ 
+@@ -45,4 +45,5 @@
+         
+         return plantMList;
+     }
++    
+ }
+\ No newline at end of file
+Index: ../API/API/Controllers/PlantController.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using API.Dto;\r\nusing DAL;\r\nusing Microsoft.AspNetCore.Mvc;\r\nusing Microsoft.EntityFrameworkCore;\r\n\r\nnamespace API.Controllers;\r\n\r\n[ApiController]\r\n[Route(\"[controller]\")]\r\npublic class PlantController : ControllerBase\r\n{\r\n    private readonly DatabaseNeePortal2023Uas6Context _context;\r\n\r\n    public PlantController(DatabaseNeePortal2023Uas6Context context)\r\n    {\r\n        _context = context;\r\n    }\r\n\r\n    [HttpGet]\r\n    public async Task<ActionResult<List<Plant>>> GetPlants()\r\n    {\r\n        var plants = await _context.ElectricityProductionPlants.Where(p => p.Canton == \"VS\").Take(100)\r\n            .Select(PP => new Plant { Id = PP.XtfId, X = PP.X, Y = PP.Y })\r\n            .ToListAsync();\r\n\r\n        return plants;\r\n    }\r\n}
+===================================================================
+diff --git a/../API/API/Controllers/PlantController.cs b/../API/API/Controllers/PlantController.cs
+--- a/../API/API/Controllers/PlantController.cs	
++++ b/../API/API/Controllers/PlantController.cs	
+@@ -6,7 +6,7 @@
+ namespace API.Controllers;
+ 
+ [ApiController]
+-[Route("[controller]")]
++[Route("api/[controller]")]
+ public class PlantController : ControllerBase
+ {
+     private readonly DatabaseNeePortal2023Uas6Context _context;
