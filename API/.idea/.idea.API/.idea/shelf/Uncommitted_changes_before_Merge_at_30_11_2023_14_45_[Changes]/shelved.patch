@@ -1,0 +1,20 @@
+Index: API/appsettings.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"Logging\": {\r\n    \"LogLevel\": {\r\n      \"Default\": \"Information\",\r\n      \"Microsoft.AspNetCore\": \"Warning\"\r\n    }\r\n  },\r\n  \"AllowedHosts\": \"*\"\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/API/appsettings.json b/API/appsettings.json
+--- a/API/appsettings.json	(revision 1f129ac4d997676f08b34258f7010e1cecf68c07)
++++ b/API/appsettings.json	(date 1701351853349)
+@@ -5,5 +5,8 @@
+       "Microsoft.AspNetCore": "Warning"
+     }
+   },
+-  "AllowedHosts": "*"
++  "AllowedHosts": "*",
++  "ConnectionStrings": {
++    "DatabaseNeePortal2023Uas6Context": "Server=tcp:sql-server-nee-portal-2023-uas6.database.windows.net,1433;Initial Catalog=database_nee_portal_2023_uas6;Persist Security Info=False;User ID=nee_portal_2023uas6;Password=K4M:95U=>LqXpv[G].e%u/;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
++  }
+ }

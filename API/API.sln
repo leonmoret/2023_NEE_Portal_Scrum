@@ -1,8 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{584A5479-2078-4759-90C6-1D657128492D}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{584A5479-2078-4759-90C6-1D657128492D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{FC4A3FFD-60B3-49D5-BBE2-9AC4B0B037EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{FC4A3FFD-60B3-49D5-BBE2-9AC4B0B037EE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAPI", "TestAPI\TestAPI.csproj", "{95A9520F-0362-4413-85BC-D64186D7ECEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +23,15 @@ Global
 		{FC4A3FFD-60B3-49D5-BBE2-9AC4B0B037EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC4A3FFD-60B3-49D5-BBE2-9AC4B0B037EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC4A3FFD-60B3-49D5-BBE2-9AC4B0B037EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95A9520F-0362-4413-85BC-D64186D7ECEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95A9520F-0362-4413-85BC-D64186D7ECEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95A9520F-0362-4413-85BC-D64186D7ECEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95A9520F-0362-4413-85BC-D64186D7ECEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B766F65F-94E2-4CD3-B61F-B5FEA1542B62}
 	EndGlobalSection
 EndGlobal

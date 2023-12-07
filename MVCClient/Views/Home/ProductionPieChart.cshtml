@@ -1,0 +1,50 @@
+ @model List<ProductionVS>
+ 
+@{
+  var gwh_PV_2018Json = System.Text.Json.JsonSerializer.Serialize(Model.Where(p => p.Year == 2018).Where(p => p.SubCategory == "PV").Select(p=>p.Gwh));
+  var gwh_Wind_2018Json = System.Text.Json.JsonSerializer.Serialize(Model.Where(p => p.Year == 2018).Where(p => p.SubCategory == "Windturbine").Select(p => p.Gwh));
+  var gwh_Hydr_2018Json = System.Text.Json.JsonSerializer.Serialize(Model.Where(p => p.Year == 2018).Where(p => p.SubCategory == "mini-hydraulic").Select(p=>p.Gwh));
+  var gwh_Bio_2018Json = System.Text.Json.JsonSerializer.Serialize(Model.Where(p => p.Year == 2018).Where(p => p.SubCategory == "Bio-gas").Select(p=>p.Gwh));
+
+}
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
+ <canvas id="pieChart"></canvas>
+ 
+ <script>
+   var gwh_Wind_2018 = JSON.parse('@Html.Raw(gwh_Wind_2018Json)');
+   var  gwh_PV_2018 = JSON.parse('@Html.Raw(gwh_PV_2018Json)');
+   var gwh_Bio_2018 = JSON.parse('@Html.Raw(gwh_Bio_2018Json)');
+   var  gwh_Hydr_2018 = JSON.parse('@Html.Raw(gwh_Hydr_2018Json)');     
+      
+   var ctx = document.getElementById('pieChart').getContext('2d');
+   var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['PV', 'Mini-Hydraulic','Windturbine','Biogas'],
+            datasets: [
+            {
+                label: '2018',
+                data: [gwh_PV_2018, gwh_Hydr_2018, gwh_Wind_2018,gwh_Bio_2018],
+                backgroundColor: [ 'rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)', 'rgb(255, 0, 255)'],
+                borderColor: '#fff',
+                borderWidth: 2,
+                hoverOffset: 4
+
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                },
+                tooltip: {
+                    enabled: true
+                }
+            }
+        }
+  });
+ </script>
+
+ 
